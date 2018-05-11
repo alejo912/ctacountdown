@@ -1,0 +1,194 @@
+/*
+Theme Name: Twenty Sixteen Child
+Author: Oscar Alejandro López Paz
+Description: Twenty Sixteen Child with CTA Born Again Media
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: cta, one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Text Domain: twentysixteen
+Template: twentysixteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+.cta-countdown {
+    width: 711px;
+    height: 140px;
+    background-color: #000105;
+    max-width: 100%;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    line-height: 1;
+}
+
+.cta-countdown small {
+    font-size: 0.7em;
+}
+
+.cta-countdown .fs1 {
+    font-size: 1.5rem;
+}
+
+.cta-countdown .fs2 {
+    font-size: 1.3rem;
+}
+
+.cta-countdown .fs3 {
+    font-size: 0.9rem;
+}
+
+.cta-countdown .fs4 {
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 500px) and (max-device-width: 500px)/* Mobile */ {
+    .cta-countdown small {
+        font-size: 0.58em !important;
+    }
+
+    .cta-countdown .fs1 {
+        font-size: 1.3rem !important;
+    }
+
+    .cta-countdown .fs2 {
+        font-size: 0.8rem !important;
+    }
+
+    .cta-countdown .fs3 {
+        font-size: 0.6rem !important;
+    }
+
+    .cta-countdown .fs4 {
+        font-size: 0.54rem !important;
+    }
+}
+
+.cta-img {
+    width: 191px;
+    height: 100%;
+    max-width: 40%;
+}
+
+.cta-body {
+    width: 362px;
+    margin-left: -74px;
+    max-width: 51%;
+    flex: 1 1;
+}
+
+@media screen and (min-device-width: 750px) and (min-width: 750px) {
+    .cta-body {
+        margin-left: -22px;
+    }
+}
+
+.cta-counter-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+.cta-counter {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: center;
+    margin-right: 2px;
+    max-width: 95%;
+}
+
+.cta-counter > div {
+    background-color: #ff1805;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin: 2px;
+}
+
+.cta-counter-description {
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 20px;
+    align-self: center;
+    line-height: 1.3;
+    font-size: 0.6rem !important;
+}
+
+@media screen and (max-device-width: 550px), (max-width: 550px) {
+    .cta-counter-description {
+        font-size: 0.6rem;
+    }
+
+    .cta-title {
+        font-size: 1.1rem;
+    }
+
+    .cta-title-description {
+        font-size: 0.7rem;
+    }
+}
+
+.cta-column {
+    padding-top: 6px;
+}
+
+.cta-title {
+    color: #fee801;
+    font-weight: bold;
+    font-size: 1.1rem !important;
+}
+
+.cta-title-description {
+    color: #ffffff;
+    padding-top: 4px;
+    font-size: 0.7rem !important;
+}
+
+.cta-button-container {
+    width: 180px;
+    max-width: 26%;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.cta-button {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.cta-button button {
+    background: #febd17;
+    background: -moz-linear-gradient(top, #febd17 0%, #fe9917 100%);
+    background: -webkit-linear-gradient(top, #febd17 0%, #fe9917 100%);
+    background: linear-gradient(to bottom, #febd17 0%, #fe9917 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febd17', endColorstr='#fe9917', GradientType=0);
+    width: 120px;
+    height: 48px;
+    border-radius: 4px;
+    border-style: none none solid none;
+    border-bottom: 2px solid #8b540d;
+    font-weight: bold;
+    color: #2c1e04;
+    text-shadow: 0 0 0.1px #2c1e04;
+    cursor: pointer;
+    max-width: 95%;
+    font-size: 0.9rem;
+}
+
+.cta-sponsor {
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}

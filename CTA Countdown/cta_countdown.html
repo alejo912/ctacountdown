@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTA Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<div class="cta-countdown" id="1">
+    <img class="cta-img" src="nfl.png" alt="NFL">
+    <div class="cta-body">
+        <div class="cta-counter-row">
+            <div class="cta-counter">
+                <div>
+                    <small>DAYS</small>
+                    <br>
+                    <span class="cta-days fs1">01</span>
+                </div>
+                <div>
+                    <small>HOURS</small>
+                    <br>
+                    <span class="cta-hours fs1">23</span>
+                </div>
+                <div>
+                    <small>MIN</small>
+                    <br>
+                    <span class="cta-min fs1">55</span>
+                </div>
+                <div>
+                    <small>SEC</small>
+                    <br>
+                    <span class="cta-sec fs1">32</span>
+                </div>
+            </div>
+            <div class="cta-counter-description fs4">
+                Remaining Time <br> To Place Bet
+            </div>
+        </div>
+        <div class="cta-column">
+            <div class="cta-title fs2">
+                Our NFL Pick: Vikings +3
+            </div>
+            <div class="cta-title-description fs3">
+                Hurry up! <strong><b>25</b></strong> people have placed this bet
+            </div>
+        </div>
+    </div>
+    <div class="cta-button-container">
+        <div class="cta-button">
+            <button>BET & WIN</button>
+        </div>
+        <div class="cta-sponsor fs4">
+            Trusted<br>
+            Sportsbetting.ag
+
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<div class="cta-countdown" id="2">
+    <img class="cta-img" src="nfl.png" alt="NFL">
+    <div class="cta-body">
+        <div class="cta-counter-row">
+            <div class="cta-counter">
+                <div>
+                    <small>DAYS</small>
+                    <br>
+                    <span class="cta-days fs1">01</span>
+                </div>
+                <div>
+                    <small>HOURS</small>
+                    <br>
+                    <span class="cta-hours fs1">23</span>
+                </div>
+                <div>
+                    <small>MIN</small>
+                    <br>
+                    <span class="cta-min fs1">55</span>
+                </div>
+                <div>
+                    <small>SEC</small>
+                    <br>
+                    <span class="cta-sec fs1">32</span>
+                </div>
+            </div>
+            <div class="cta-counter-description fs4">
+                Remaining Time <br> To Place Bet
+            </div>
+        </div>
+        <div class="cta-column">
+            <div class="cta-title fs2">
+                Our NFL Pick: Vikings +3
+            </div>
+            <div class="cta-title-description fs3">
+                Hurry up! <strong><b>25</b></strong> people have placed this bet
+            </div>
+        </div>
+    </div>
+    <div class="cta-button-container">
+        <div class="cta-button">
+            <button class="fs3">BET & WIN</button>
+        </div>
+        <div class="cta-sponsor fs4">
+            Trusted<br>
+            Sportsbetting.ag
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script>
+    // General function to update every countdown by id and remaining time
+    function updateTime(cta_id, remaining) {
+        var cta = $('#' + cta_id);
+        var now = new Date().getTime();
+        var remaining = new Date(remaining).getTime();
+
+        // Set to 0 negative values
+        var difference = (remaining - now < 0) ? 0 : remaining - now;
+
+        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        cta.find('.cta-days').html(days);
+        cta.find('.cta-hours').html(hours);
+        cta.find('.cta-min').html(minutes);
+        cta.find('.cta-sec').html(seconds);
+    }
+
+    // Update the number of bets
+    function addBet(cta_id) {
+        var number_bets = $('#' + cta_id).find('.cta-title-description b');
+        number_bets.html((parseInt(number_bets.html()) + 1).toString());
+    }
+
+    var cta = $('#1');
+    cta.find('.cta-button button').on('click', function () {
+        addBet('1');
+    });
+
+    $(document).ready(function () {
+        setInterval(function () {
+            updateTime('1', '2018/06/05 18:00:00');
+        }, 1000);
+    });
+
+    cta = $('#2');
+    cta.find('.cta-button button').on('click', function () {
+        addBet('2');
+    });
+
+    $(document).ready(function () {
+        setInterval(function () {
+            updateTime('2', '2019/01/05 11:00:00');
+        }, 1000);
+    });
+
+</script>
+
+</html>
