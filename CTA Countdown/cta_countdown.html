@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="cta-countdown" data-remaining="2018/06/05 18:00:00" id="1">
+<div class="cta-countdown" data-remaining="2018/06/05 18:00:00">
     <div class="cta-body">
         <div class="cta-counter-row">
             <div class="cta-counter">
@@ -60,7 +60,7 @@
 
 <br><br>
 
-<div class="cta-countdown" data-remaining="2019/01/05 11:00:25" id="2">
+<div class="cta-countdown" data-remaining="2019/01/05 11:00:25">
     <div class="cta-body">
         <div class="cta-counter-row">
             <div class="cta-counter">
@@ -113,51 +113,45 @@
 
 <script>
     // General function to update every countdown by id and remaining time
-    function updateTime(cta_id) {
-        var cta = $('#' + cta_id);
-        var now = new Date().getTime();
-        var remaining = new Date(cta.data('remaining')).getTime();
+    function updateTime(cta_class) {
 
-        // Set to 0 negative values
-        var difference = (remaining - now < 0) ? 0 : remaining - now;
+        $(cta_class).each(function () {
+            var cta = $(this);
+            var now = new Date().getTime();
+            var remaining = new Date(cta.data('remaining')).getTime();
 
-        var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            // Set to 0 negative values
+            var difference = (remaining - now < 0) ? 0 : remaining - now;
 
-        cta.find('.cta-days').html(days);
-        cta.find('.cta-hours').html(hours);
-        cta.find('.cta-min').html(minutes);
-        cta.find('.cta-sec').html(seconds);
+            var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            cta.find('.cta-days').html(days);
+            cta.find('.cta-hours').html(hours);
+            cta.find('.cta-min').html(minutes);
+            cta.find('.cta-sec').html(seconds);
+        });
+
+
     }
 
     // Update the number of bets
-    function addBet(cta_id) {
-        var number_bets = $('#' + cta_id).find('.cta-title-description b');
+    function addBet(cta) {
+        cta = cta.parent().parent().parent();
+        var number_bets = cta.find('.cta-title-description b');
         number_bets.html((parseInt(number_bets.html()) + 1).toString());
     }
 
-    var cta = $('#1');
-    cta.find('.cta-button button').on('click', function () {
-        addBet('1');
-    });
-
     $(document).ready(function () {
         setInterval(function () {
-            updateTime('1');
+            updateTime('.cta-countdown');
         }, 1000);
-    });
 
-    cta = $('#2');
-    cta.find('.cta-button button').on('click', function () {
-        addBet('2');
-    });
-
-    $(document).ready(function () {
-        setInterval(function () {
-            updateTime('2');
-        }, 1000);
+        $('.cta-button button').on('click', function () {
+            addBet($(this));
+        });
     });
 
 </script>
