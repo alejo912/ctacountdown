@@ -4,13 +4,16 @@ body {
 
 .cta-countdown {
     width: 711px;
-    height: 140px;
+    min-height: 140px;
+    background-image: url("./nfl.png");
+    background-repeat: no-repeat;
+    background-position: left center;
     background-color: #000105;
     max-width: 100%;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     line-height: 1;
 }
@@ -35,45 +38,15 @@ body {
     font-size: 0.8rem;
 }
 
-@media screen and (max-width: 500px) and (max-device-width: 500px)/* Mobile */ {
-    .cta-countdown small {
-        font-size: 0.58em;
-    }
-
-    .cta-countdown .fs1 {
-        font-size: 1.3rem;
-    }
-
-    .cta-countdown .fs2 {
-        font-size: 0.8rem;
-    }
-
-    .cta-countdown .fs3 {
-        font-size: 0.6rem;
-    }
-
-    .cta-countdown .fs4 {
-        font-size: 0.54rem;
-    }
-}
-
 .cta-img {
     width: 191px;
     height: 100%;
-    max-width: 40%;
 }
 
 .cta-body {
     width: 362px;
-    margin-left: -74px;
-    max-width: 51%;
+    margin-left: 25%;
     flex: 1 1;
-}
-
-@media screen and (min-device-width: 750px) and (min-width: 750px) {
-    .cta-body {
-        margin-left: -22px;
-    }
 }
 
 .cta-counter-row {
@@ -110,22 +83,8 @@ body {
     line-height: 1.3;
 }
 
-@media screen and (max-device-width: 550px), (max-width: 550px) {
-    .cta-counter-description {
-        font-size: 0.6rem;
-    }
-
-    .cta-title {
-        font-size: 1.1rem;
-    }
-
-    .cta-title-description {
-        font-size: 0.7rem;
-    }
-}
-
 .cta-column {
-    padding-top: 6px;
+    padding: 6px 0;
 }
 
 .cta-title {
@@ -140,12 +99,12 @@ body {
 
 .cta-button-container {
     width: 180px;
-    max-width: 26%;
     background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    max-width: 26%;
 }
 
 .cta-button {
@@ -177,4 +136,56 @@ body {
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
+}
+
+@media screen and (max-width: 738px) {
+    .mob-hide {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    /*Mobile*/
+    .cta-countdown {
+        height: auto;
+        display: block;
+        flex-flow: unset;
+        position: relative;
+        background-position: left top;
+    }
+
+    .cta-body {
+        flex: unset;
+        margin-left: 30%;
+        width: 70%;
+        padding-bottom: 5px;
+    }
+
+    .cta-column {
+        text-align: right;
+        padding-right: 5px;
+        margin-left: -27%;
+    }
+
+    .cta-counter-row {
+        justify-content: flex-end;
+        padding-right: 5px;
+    }
+
+    .cta-button-container {
+        max-width: 100%;
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .cta-button {
+        padding: 5px;
+        max-width: 50%;
+    }
+
+    .cta-sponsor {
+        max-width: 50%;
+    }
 }

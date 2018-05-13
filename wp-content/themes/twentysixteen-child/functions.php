@@ -69,7 +69,6 @@ function cta_countdown_func($atts)
     ), $atts);
 
     return '<div class="cta-countdown" data-remaining ="' . $attrs['remaining'] . '" id="' . $attrs['id'] . '">
-        <img class="cta-img" src="' . get_stylesheet_directory_uri() . '/img/nfl.png' . '" alt="NFL">
         <div class="cta-body">
             <div class="cta-counter-row">
                 <div class="cta-counter">
@@ -95,7 +94,7 @@ function cta_countdown_func($atts)
                     </div>
                 </div>
                 <div class="cta-counter-description fs4">
-                    Remaining Time <br> To Place Bet
+                    Remaining Time <br class="mob-hide">  To Place Bet
                 </div>
             </div>
             <div class="cta-column">

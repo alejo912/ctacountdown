@@ -9,34 +9,33 @@
 </head>
 <body>
 
-<div class="cta-countdown" id="1">
-    <img class="cta-img" src="nfl.png" alt="NFL">
+<div class="cta-countdown" data-remaining="2018/06/05 18:00:00" id="1">
     <div class="cta-body">
         <div class="cta-counter-row">
             <div class="cta-counter">
                 <div>
                     <small>DAYS</small>
                     <br>
-                    <span class="cta-days fs1">01</span>
+                    <span class="cta-days fs1"></span>
                 </div>
                 <div>
                     <small>HOURS</small>
                     <br>
-                    <span class="cta-hours fs1">23</span>
+                    <span class="cta-hours fs1"></span>
                 </div>
                 <div>
                     <small>MIN</small>
                     <br>
-                    <span class="cta-min fs1">55</span>
+                    <span class="cta-min fs1"></span>
                 </div>
                 <div>
                     <small>SEC</small>
                     <br>
-                    <span class="cta-sec fs1">32</span>
+                    <span class="cta-sec fs1"></span>
                 </div>
             </div>
             <div class="cta-counter-description fs4">
-                Remaining Time <br> To Place Bet
+                Remaining Time <br class="mob-hide"> To Place Bet
             </div>
         </div>
         <div class="cta-column">
@@ -55,41 +54,39 @@
         <div class="cta-sponsor fs4">
             Trusted<br>
             Sportsbetting.ag
-
         </div>
     </div>
 </div>
 
 <br><br>
 
-<div class="cta-countdown" id="2">
-    <img class="cta-img" src="nfl.png" alt="NFL">
+<div class="cta-countdown" data-remaining="2019/01/05 11:00:25" id="2">
     <div class="cta-body">
         <div class="cta-counter-row">
             <div class="cta-counter">
                 <div>
                     <small>DAYS</small>
                     <br>
-                    <span class="cta-days fs1">01</span>
+                    <span class="cta-days fs1"></span>
                 </div>
                 <div>
                     <small>HOURS</small>
                     <br>
-                    <span class="cta-hours fs1">23</span>
+                    <span class="cta-hours fs1"></span>
                 </div>
                 <div>
                     <small>MIN</small>
                     <br>
-                    <span class="cta-min fs1">55</span>
+                    <span class="cta-min fs1"></span>
                 </div>
                 <div>
                     <small>SEC</small>
                     <br>
-                    <span class="cta-sec fs1">32</span>
+                    <span class="cta-sec fs1"></span>
                 </div>
             </div>
             <div class="cta-counter-description fs4">
-                Remaining Time <br> To Place Bet
+                Remaining Time <br class="mob-hide"> To Place Bet
             </div>
         </div>
         <div class="cta-column">
@@ -108,7 +105,6 @@
         <div class="cta-sponsor fs4">
             Trusted<br>
             Sportsbetting.ag
-
         </div>
     </div>
 </div>
@@ -117,10 +113,10 @@
 
 <script>
     // General function to update every countdown by id and remaining time
-    function updateTime(cta_id, remaining) {
+    function updateTime(cta_id) {
         var cta = $('#' + cta_id);
         var now = new Date().getTime();
-        var remaining = new Date(remaining).getTime();
+        var remaining = new Date(cta.data('remaining')).getTime();
 
         // Set to 0 negative values
         var difference = (remaining - now < 0) ? 0 : remaining - now;
@@ -149,7 +145,7 @@
 
     $(document).ready(function () {
         setInterval(function () {
-            updateTime('1', '2018/06/05 18:00:00');
+            updateTime('1');
         }, 1000);
     });
 
@@ -160,7 +156,7 @@
 
     $(document).ready(function () {
         setInterval(function () {
-            updateTime('2', '2019/01/05 11:00:00');
+            updateTime('2');
         }, 1000);
     });
 
