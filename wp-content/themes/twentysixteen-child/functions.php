@@ -69,7 +69,7 @@ function cta_countdown_func($atts)
     ), $atts);
 
     return '<div class="cta-countdown" data-remaining ="' . $attrs['remaining'] . '" id="' . $attrs['id'] . '">
-        <img class="cta-img" src="http://localhost/ctabornagainmedia/wp-content/uploads/2018/05/nfl.png" alt="NFL">
+        <img class="cta-img" src="' . get_stylesheet_directory_uri() . '/img/nfl.png' . '" alt="NFL">
         <div class="cta-body">
             <div class="cta-counter-row">
                 <div class="cta-counter">
