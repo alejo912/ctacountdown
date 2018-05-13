@@ -24,10 +24,10 @@ function basic_cta_functions()
     echo '
     <script>
     // General function to update every countdown by id and remaining time
-    function updateTime(cta_id, remaining) {
+    function updateTime(cta_id) {
         var cta = jQuery("#" + cta_id);
         var now = new Date().getTime();
-        var remaining = new Date(remaining).getTime();
+        var remaining = new Date(cta.data("remaining")).getTime();
 
         // Set to 0 negative values
         var difference = (remaining - now < 0) ? 0 : remaining - now;
@@ -68,7 +68,7 @@ function cta_countdown_func($atts)
         'id' => 'countdown1'
     ), $atts);
 
-    return '<div class="cta-countdown" id="' . $attrs['id'] . '">
+    return '<div class="cta-countdown" data-remaining ="' . $attrs['remaining'] . '" id="' . $attrs['id'] . '">
         <img class="cta-img" src="http://localhost/ctabornagainmedia/wp-content/uploads/2018/05/nfl.png" alt="NFL">
         <div class="cta-body">
             <div class="cta-counter-row">
@@ -126,7 +126,7 @@ function cta_countdown_func($atts)
 
         jQuery(document) . ready(function () {
             setInterval(function () {
-                updateTime("' . $attrs['id'] . '", "' . $attrs['remaining'] . '");
+                updateTime("' . $attrs['id'] . '");
                     }, 1000);
         });
     </script>';
